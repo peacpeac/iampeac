@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peter Ac (@iampeac) | Personal Portfolio & Web Hub</title>
+  <meta name="description" content="Personal website and portfolio of Peter Ac (@iampeac). Discover projects, background, and get in touch." />
+  <meta name="author" content="Peter Ac" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://iampeac.com/" />
+  <meta property="og:title" content="Peter Ac (@iampeac)" />
+  <meta property="og:description" content="Personal website and portfolio of Peter Ac (@iampeac)." />
+  <meta property="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-brand">
+        <span class="brand-bracket">&lt;</span>iampeac<span class="brand-bracket">/&gt;</span>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open mobile menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-badge">
+        <span class="status-pulse"></span>
+        <span>Open to new opportunities & projects</span>
+      </div>
+      <h1 class="hero-title">
+        Hi, I'm <span class="gradient-text">Peter Ac</span>
+      </h1>
+      <p class="hero-subtitle">
+        Known online as <span class="accent-code">@iampeac</span>. Passionate about engineering thoughtful digital experiences, solving complex problems, and building impactful software.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">
+          Get In Touch
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="#projects" class="btn btn-secondary">
+          Explore Projects
+        </a>
+        <a href="mailto:peter@iampeac.com" class="btn btn-ghost">
+          peter@iampeac.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">A brief look at what drives my work and interests.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card card">
+          <div class="card-icon">🚀</div>
+          <h3>Builder & Problem Solver</h3>
+          <p>
+            Focused on building clean, reliable, and scalable software solutions. Driven by curiosity and continuous learning.
+          </p>
+        </div>
+        <div class="about-card card">
+          <div class="card-icon">🎯</div>
+          <h3>Results-Oriented</h3>
+          <p>
+            Committed to high engineering standards, clean architecture, intuitive user experience, and measurable impact.
+          </p>
+        </div>
+        <div class="about-card card">
+          <div class="card-icon">🤝</div>
+          <h3>Collaborator</h3>
+          <p>
+            Experienced in working across agile teams, communicating ideas clearly, and turning product visions into reality.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Skills & Stack</h2>
+        <p class="section-subtitle">Technologies, frameworks, and methodologies I work with.</p>
+      </div>
+      <div class="skills-wrapper">
+        <div class="skill-category">
+          <h3>Core & Languages</h3>
+          <div class="tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">HTML5 / Modern CSS</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Frameworks & Tools</h3>
+          <div class="tags">
+            <span class="tag">React / Next.js</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Git & GitHub</span>
+            <span class="tag">REST & GraphQL APIs</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Cloud, DevOps & Practices</h3>
+          <div class="tags">
+            <span class="tag">Cloudflare</span>
+            <span class="tag">CI / CD Pipelines</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Agile Development</span>
+            <span class="tag">Performance & SEO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Work</h2>
+        <p class="section-subtitle">Selected personal projects, experiments, and applications.</p>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card card">
+          <div class="project-header">
+            <span class="project-badge">Featured App</span>
+            <h3 class="project-title">Job Searching App</h3>
+          </div>
+          <p class="project-desc">
+            A streamlined tool designed to track applications, automate job matching, and organize the recruitment pipeline with actionable insights.
+          </p>
+          <div class="project-tags">
+            <span class="tag-sm">Productivity</span>
+            <span class="tag-sm">Automation</span>
+            <span class="tag-sm">Web App</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="card-link">Learn More &rarr;</a>
+          </div>
+        </article>
+
+        <article class="project-card card">
+          <div class="project-header">
+            <span class="project-badge">Identity Hub</span>
+            <h3 class="project-title">iampeac.com Hub</h3>
+          </div>
+          <p class="project-desc">
+            Ultra-fast personal web presence, custom email routing, and portfolio optimized for 100/100 performance and zero-cost cloud hosting.
+          </p>
+          <div class="project-tags">
+            <span class="tag-sm">Static Web</span>
+            <span class="tag-sm">DNS & Routing</span>
+            <span class="tag-sm">Portfolio</span>
+          </div>
+          <div class="project-links">
+            <a href="https://iampeac.com" class="card-link">Live Site &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="contact-box card">
+        <div class="section-header">
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-subtitle">
+            Whether you have an opportunity, project, or just want to say hello, my inbox is always open.
+          </p>
+        </div>
+        <div class="contact-methods">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-details">
+              <span class="contact-label">Direct Email</span>
+              <div class="email-copy-row">
+                <a href="mailto:peter@iampeac.com" class="contact-value" id="emailVal">peter@iampeac.com</a>
+                <button class="btn-copy" id="copyEmailBtn" title="Copy email address">Copy</button>
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🌐</div>
+            <div class="contact-details">
+              <span class="contact-label">Domain</span>
+              <span class="contact-value">iampeac.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            GitHub
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            LinkedIn
+          </a>
+          <a href="mailto:peter@iampeac.com" class="btn btn-primary">
+            Send an Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; <span id="year"></span> Peter Ac. All rights reserved.</p>
+      <p class="footer-sub">Hosted at <a href="https://iampeac.com">iampeac.com</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
