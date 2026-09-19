@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('themeToggle');
   const htmlRoot = document.documentElement;
 
-  const savedTheme = localStorage.getItem('peac-theme');
+  const savedTheme = localStorage.getItem('peac-executive-theme');
   if (savedTheme) {
     htmlRoot.setAttribute('data-theme', savedTheme);
   } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const currentTheme = htmlRoot.getAttribute('data-theme') || 'dark';
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       htmlRoot.setAttribute('data-theme', newTheme);
-      localStorage.setItem('peac-theme', newTheme);
+      localStorage.setItem('peac-executive-theme', newTheme);
     });
   }
 
@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.toggle('active');
     });
 
-    // Close menu when clicking a link
     navMenu.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -44,25 +43,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. One-Click Copy Email
   const copyBtn = document.getElementById('copyEmailBtn');
-  const emailVal = document.getElementById('emailVal');
+  const emailDisplay = document.getElementById('emailDisplay');
 
-  if (copyBtn && emailVal) {
+  if (copyBtn && emailDisplay) {
     copyBtn.addEventListener('click', () => {
-      const textToCopy = emailVal.textContent.trim();
-      navigator.clipboard.writeText(textToCopy).then(() => {
+      const email = emailDisplay.textContent.trim();
+      navigator.clipboard.writeText(email).then(() => {
         const originalText = copyBtn.textContent;
-        copyBtn.textContent = 'Copied!';
-        copyBtn.style.borderColor = '#10b981';
-        copyBtn.style.color = '#10b981';
+        copyBtn.textContent = 'Copied';
+        copyBtn.style.borderColor = 'var(--accent-gold)';
+        copyBtn.style.color = 'var(--accent-gold)';
 
         setTimeout(() => {
           copyBtn.textContent = originalText;
           copyBtn.style.borderColor = '';
           copyBtn.style.color = '';
-        }, 2000);
+        }, 2200);
       }).catch(err => {
-        console.error('Failed to copy text: ', err);
+        console.error('Copy failed: ', err);
       });
+    });
+  }
+
+  // 5. Innovative Feature: Save Executive Contact Card (vCard .vcf)
+  const saveVCardBtn = document.getElementById('saveVCardBtn');
+  if (saveVCardBtn) {
+    saveVCardBtn.addEventListener('click', () => {
+      const vCardData = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'FN:Peter Ac',
+        'N:Ac;Peter;;;',
+        'TITLE:Executive Technology & Operations Leader',
+        'EMAIL;TYPE=INTERNET,WORK:peter@iampeac.com',
+        'URL;TYPE=WORK:https://iampeac.com',
+        'X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/peter-ac/',
+        'ADR;TYPE=WORK:;;Malmö;;;Sweden',
+        'NOTE:Enterprise technology & global operations executive connecting physical manufacturing, automation, and digital intelligence.',
+        'END:VCARD'
+      ].join('\r\n');
+
+      const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const downloadLink = document.createElement('a');
+      downloadLink.href = url;
+      downloadLink.setAttribute('download', 'Peter_Ac_Executive.vcf');
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      URL.revokeObjectURL(url);
     });
   }
 });
