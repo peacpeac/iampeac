@@ -534,54 +534,57 @@ body {
   font-size: 1rem;
 }
 
-/* Impact Metrics */
-.metrics-section {
-  padding: 45px 0;
+/* Core Scope Bar */
+.scope-section {
+  padding: 48px 0;
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
   background: var(--bg-surface);
 }
 
-.metrics-grid {
+.scope-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 28px;
 }
 
-.metric-item {
+.scope-item {
   display: flex;
   flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px 22px;
+  transition: all var(--transition-fast);
 }
 
-.metric-number {
-  font-family: var(--font-serif);
-  font-size: 2.8rem;
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--text-primary);
-  margin-bottom: 6px;
+.scope-item:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
 }
 
-.metric-accent {
-  color: var(--accent-gold);
-}
-
-.metric-arrow {
-  color: var(--accent-gold);
-  font-size: 2.2rem;
-}
-
-.metric-label {
-  font-size: 0.95rem;
+.scope-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
   font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 4px;
+  letter-spacing: 1px;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
-.metric-desc {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.45;
+.scope-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.scope-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
 }
 
 /* Section Common */
@@ -963,9 +966,9 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .metrics-grid {
+  .scope-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
+    gap: 24px;
   }
 
   .contact-channels {
@@ -999,7 +1002,7 @@ body {
     display: flex;
   }
 
-  .value-grid, .pillars-grid, .metrics-grid {
+  .value-grid, .pillars-grid, .scope-grid {
     grid-template-columns: 1fr;
   }
 

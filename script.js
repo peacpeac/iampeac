@@ -74,12 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
         'VERSION:3.0',
         'FN:Peter Ac',
         'N:Ac;Peter;;;',
-        'TITLE:Executive Technology & Operations Leader',
+        'TITLE:Supply Chain & Technology & Innovation Executive',
         'EMAIL;TYPE=INTERNET,WORK:peter@iampeac.com',
         'URL;TYPE=WORK:https://iampeac.com',
         'X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/peter-ac/',
         'ADR;TYPE=WORK:;;Malmö;;;Sweden',
-        'NOTE:Enterprise technology & global operations executive connecting physical manufacturing, automation, and digital intelligence.',
+        'NOTE:Supply chain, technology, and innovation executive connecting global operations, industrial automation, and enterprise systems.',
         'END:VCARD'
       ].join('\r\n');
 
