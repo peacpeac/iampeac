@@ -94,4 +94,55 @@ document.addEventListener('DOMContentLoaded', () => {
       URL.revokeObjectURL(url);
     });
   }
+
+  // 6. Executive Consultation Booking Modal
+  const bookingModal = document.getElementById('bookingModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const bookMeetingButtons = [
+    document.getElementById('navBookMeetingBtn'),
+    document.getElementById('heroBookMeetingBtn'),
+    document.getElementById('contactChannelBookBtn'),
+    document.getElementById('contactCtaBookBtn')
+  ];
+
+  function openBookingModal() {
+    if (!bookingModal) return;
+    bookingModal.classList.add('active');
+    bookingModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeBookingModal() {
+    if (!bookingModal) return;
+    bookingModal.classList.remove('active');
+    bookingModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  bookMeetingButtons.forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openBookingModal();
+      });
+    }
+  });
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', closeBookingModal);
+  }
+
+  if (bookingModal) {
+    bookingModal.addEventListener('click', (e) => {
+      if (e.target === bookingModal) {
+        closeBookingModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && bookingModal && bookingModal.classList.contains('active')) {
+      closeBookingModal();
+    }
+  });
 });

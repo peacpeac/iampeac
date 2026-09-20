@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule a 30-Min Consultation | Peter Ac</title>
+  <meta name="description" content="Book a 30-minute executive consultation with Peter Ac. Real-time availability verified with Google Calendar and instant Google Meet invitation." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient Glows -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <div class="scheduler-container">
+    
+    <!-- Top Header -->
+    <header class="scheduler-header">
+      <div class="brand-badge">
+        <span class="brand-badge-dot"></span>
+        <span>Executive Consultation</span>
+      </div>
+      <h1 class="scheduler-title">Schedule a 30-Min Discussion</h1>
+      <p class="scheduler-subtitle">
+        Direct discussion with <strong>Peter Ac</strong> regarding executive leadership, advisory mandates, and technology transformation.
+      </p>
+
+      <div class="specs-bar">
+        <div class="spec-item">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span>30 Minutes</span>
+        </div>
+        <div class="spec-item">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 10l5-5v14l-5-5z"></path>
+            <rect x="2" y="6" width="13" height="12" rx="2" ry="2"></rect>
+          </svg>
+          <span>Google Meet Video Call</span>
+        </div>
+        <div class="spec-item">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>24h Advance Notice</span>
+        </div>
+        <div class="spec-item">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span id="detectedTimezoneLabel">Europe/Stockholm (CET)</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Scheduler Card -->
+    <div class="scheduler-card">
+      
+      <!-- Step Navigation -->
+      <nav class="steps-nav" id="stepsNav">
+        <button class="step-btn active" id="step1Btn" data-step="1">
+          <span class="step-number">1</span>
+          <span>Date & Time</span>
+        </button>
+        <button class="step-btn" id="step2Btn" data-step="2" disabled>
+          <span class="step-number">2</span>
+          <span>Your Details</span>
+        </button>
+        <button class="step-btn" id="step3Btn" data-step="3" disabled>
+          <span class="step-number">3</span>
+          <span>Confirmation</span>
+        </button>
+      </nav>
+
+      <!-- Scheduler Body -->
+      <div class="scheduler-body">
+
+        <!-- Error Alert Banner -->
+        <div class="alert-box alert-error" id="errorAlert" style="display: none;">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <span id="errorMessage">An error occurred. Please try again.</span>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- STEP 1: DATE & TIME SELECTION -->
+        <!-- ============================================================= -->
+        <div id="step1View">
+          <div class="booking-grid">
+            
+            <!-- Left: Calendar Date Picker -->
+            <div class="calendar-column">
+              <div class="section-label">Select Date</div>
+              <div class="calendar-widget">
+                <div class="calendar-header">
+                  <span class="calendar-month-title" id="calendarMonthTitle">September 2026</span>
+                  <div style="display: flex; gap: 6px;">
+                    <button class="calendar-nav-btn" id="prevMonthBtn" aria-label="Previous Month">&larr;</button>
+                    <button class="calendar-nav-btn" id="nextMonthBtn" aria-label="Next Month">&rarr;</button>
+                  </div>
+                </div>
+
+                <div class="calendar-weekdays">
+                  <div class="weekday-header">Mon</div>
+                  <div class="weekday-header">Tue</div>
+                  <div class="weekday-header">Wed</div>
+                  <div class="weekday-header">Thu</div>
+                  <div class="weekday-header">Fri</div>
+                  <div class="weekday-header">Sat</div>
+                  <div class="weekday-header">Sun</div>
+                </div>
+
+                <div class="calendar-days" id="calendarDaysGrid">
+                  <!-- Day cells generated via JavaScript -->
+                </div>
+
+                <div class="calendar-legend">
+                  <span class="legend-dot"></span>
+                  <span>Open consultation dates (verified with Google Calendar)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Time Slots -->
+            <div class="slots-container">
+              <div class="section-label">Available Times</div>
+
+              <div class="selected-date-banner">
+                <span class="selected-date-text" id="selectedDateText">Please select a date</span>
+                <span class="timezone-pill" id="slotTimezoneNote">CET</span>
+              </div>
+
+              <!-- Slots Loading Spinner -->
+              <div id="slotsLoading" class="loading-overlay" style="display: none;">
+                <div class="spinner"></div>
+                <span style="font-size: 13px; color: var(--text-secondary);">Checking Google Calendar...</span>
+              </div>
+
+              <!-- Slots Grid -->
+              <div class="slots-grid" id="slotsGrid">
+                <!-- Slot buttons populated dynamically -->
+              </div>
+
+              <!-- Empty Slots Placeholder -->
+              <div class="no-slots-box" id="noSlotsBox">
+                Select an open date on the calendar to view available 30-minute meeting slots.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- STEP 2: REGISTRATION DETAILS FORM -->
+        <!-- ============================================================= -->
+        <div id="step2View" class="form-step" style="display: none;">
+          <div class="form-header">
+            <div class="form-summary-pill" id="formSlotSummary">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span id="formSlotSummaryText">Selected Time Slot</span>
+            </div>
+            <h2 style="font-family: var(--font-serif); font-size: 22px; color: #fff;">Enter Your Contact Information</h2>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">
+              A Google Meet link and calendar invitation will be dispatched to your email address.
+            </p>
+          </div>
+
+          <form id="bookingForm">
+            <div class="form-group">
+              <label for="fullName" class="form-label">Full Name <span class="req">*</span></label>
+              <input type="text" id="fullName" class="form-input" placeholder="e.g. Eleanor Vance" required autocomplete="name" />
+            </div>
+
+            <div class="form-group">
+              <label for="emailAddress" class="form-label">Email Address <span class="req">*</span></label>
+              <input type="email" id="emailAddress" class="form-input" placeholder="e.g. eleanor@company.com" required autocomplete="email" />
+            </div>
+
+            <div class="form-group">
+              <label for="phoneNumber" class="form-label">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="phoneNumber" class="form-input" placeholder="e.g. +46 70 123 4567 or +1 415 555 0199" required autocomplete="tel" />
+            </div>
+
+            <div class="form-group">
+              <label for="meetingNotes" class="form-label">Discussion Agenda / Context <span style="color: var(--text-muted); font-weight: normal;">(Optional)</span></label>
+              <textarea id="meetingNotes" class="form-textarea" placeholder="Brief context on topics you would like to explore..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn-secondary" id="backToStep1Btn">&larr; Change Time</button>
+              <button type="submit" class="btn-primary" id="submitBookingBtn">
+                <span>Confirm & Schedule Call</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- Booking Processing State -->
+          <div id="bookingProcessing" class="loading-overlay" style="display: none;">
+            <div class="spinner"></div>
+            <span style="font-size: 14px; font-weight: 600; color: #FFFFFF;">Verifying calendar availability & creating Google Meet...</span>
+            <span style="font-size: 12px; color: var(--text-secondary);">Please wait a moment.</span>
+          </div>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- STEP 3: CONFIRMATION VIEW -->
+        <!-- ============================================================= -->
+        <div id="step3View" class="confirmation-box" style="display: none;">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+
+          <h2 class="confirmation-title">Meeting Confirmed!</h2>
+          <p class="confirmation-subtitle">
+            A Google Calendar invite and confirmation email have been sent to <strong id="confirmedEmail" style="color: #fff;"></strong>.
+          </p>
+
+          <div class="summary-card">
+            <div class="summary-row">
+              <span class="summary-label">Host:</span>
+              <span class="summary-value">Peter Ac</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Attendee:</span>
+              <span class="summary-value" id="confirmedName"></span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Date & Time:</span>
+              <span class="summary-value" id="confirmedTime"></span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Duration:</span>
+              <span class="summary-value">30 Minutes</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Platform:</span>
+              <span class="summary-value" style="color: var(--accent-blue);">Google Meet</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Phone:</span>
+              <span class="summary-value" id="confirmedPhone"></span>
+            </div>
+          </div>
+
+          <!-- Direct Google Meet CTA -->
+          <div class="meet-action-box">
+            <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); margin-bottom: 8px;">
+              Your Video Link
+            </div>
+            <a href="#" id="confirmedMeetBtn" target="_blank" class="meet-link-btn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 10l5-5v14l-5-5z"></path>
+                <rect x="2" y="6" width="13" height="12" rx="2" ry="2"></rect>
+              </svg>
+              <span>Open Google Meet</span>
+            </a>
+            <div id="confirmedMeetUrl" style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-top: 8px;"></div>
+          </div>
+
+          <!-- Add to Calendar Export Buttons -->
+          <div class="calendar-export-actions">
+            <a href="#" id="addToGoogleCalBtn" target="_blank" class="btn-export">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Add to Google Calendar</span>
+            </a>
+            <button type="button" id="downloadIcsBtn" class="btn-export">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download .iCal File</span>
+            </button>
+          </div>
+
+          <div style="margin-top: 32px;">
+            <a href="https://iampeac.com" class="btn-secondary" style="display: inline-block; text-decoration: none; padding: 10px 24px;">
+              &larr; Return to iampeac.com
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="scheduler-footer">
+      <div>&copy; <span id="footerYear"></span> Peter Ac. Verified with Google Calendar.</div>
+      <div style="margin-top: 4px;">
+        <a href="https://iampeac.com">iampeac.com</a> &bull; Malm&ouml;, Sweden
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
