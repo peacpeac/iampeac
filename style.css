@@ -380,7 +380,7 @@ body {
 .portrait-card {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 200px;
 }
 
 .portrait-frame {
@@ -937,7 +937,7 @@ body {
   }
 
   .portrait-card {
-    max-width: 320px;
+    max-width: 160px;
   }
 
   .value-grid, .pillars-grid {
