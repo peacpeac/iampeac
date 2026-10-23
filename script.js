@@ -145,4 +145,44 @@ document.addEventListener('DOMContentLoaded', () => {
       closeBookingModal();
     }
   });
+  // 7. Header mail button: open the mail app; if none responds, copy the address instead
+  const navMailBtn = document.getElementById('navMailBtn');
+  const toast = document.getElementById('toast');
+  const MAIL_ADDRESS = 'peter@iampeac.com';
+  let toastTimer;
+
+  function showToast(message) {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+
+  function copyAddress() {
+    const done = () => showToast(MAIL_ADDRESS + ' copied to clipboard');
+    const fail = () => showToast('Email me at ' + MAIL_ADDRESS);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(MAIL_ADDRESS).then(done).catch(fail);
+    } else {
+      fail();
+    }
+  }
+
+  if (navMailBtn) {
+    navMailBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      let appOpened = false;
+      const markOpened = () => { appOpened = true; };
+      window.addEventListener('blur', markOpened, { once: true });
+      document.addEventListener('visibilitychange', markOpened, { once: true });
+      window.location.href = navMailBtn.getAttribute('href');
+      setTimeout(() => {
+        window.removeEventListener('blur', markOpened);
+        document.removeEventListener('visibilitychange', markOpened);
+        if (!appOpened) copyAddress();
+      }, 900);
+    });
+  }
+
 });

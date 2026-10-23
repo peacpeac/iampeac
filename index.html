@@ -42,7 +42,6 @@
         <a href="#overview" class="nav-link">Overview</a>
         <a href="#value-proposition" class="nav-link">Value Proposition</a>
         <a href="#focus-areas" class="nav-link">Focus Areas</a>
-        <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
       <div class="nav-actions">
@@ -65,7 +64,7 @@
         </a>
 
         <!-- Direct Email Link -->
-        <a href="mailto:peter@iampeac.com" class="btn-icon" title="Send Email" aria-label="Send Email">
+        <a href="mailto:peter@iampeac.com?subject=Hello%20Peter" class="btn-icon" id="navMailBtn" title="Email peter@iampeac.com" aria-label="Email peter@iampeac.com">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
@@ -299,71 +298,6 @@
     </div>
   </section>
 
-  <!-- Executive Contact Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="executive-contact-box">
-        <div class="contact-header">
-          <span class="section-pretitle">Get in Touch</span>
-          <h2 class="section-title">Direct Communication</h2>
-          <p class="section-subtitle">
-            Open to discussions regarding executive leadership roles, advisory mandates, and strategic initiatives.
-          </p>
-        </div>
-
-        <div class="contact-channels">
-          
-          <!-- Consultation Booking Channel -->
-          <div class="channel-card channel-card-highlight">
-            <div class="channel-icon icon-meet">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>
-            </div>
-            <div class="channel-body">
-              <div class="channel-label">Executive Consultation</div>
-              <span class="channel-link">30-Min Google Meet</span>
-            </div>
-            <button class="btn-visit" id="contactChannelBookBtn" title="Schedule 30-min consultation">Book Slot &rarr;</button>
-          </div>
-
-          <!-- Direct Email Channel -->
-          <div class="channel-card">
-            <div class="channel-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-            </div>
-            <div class="channel-body">
-              <div class="channel-label">Direct Email</div>
-              <a href="mailto:peter@iampeac.com" class="channel-link font-mono" id="emailDisplay">peter@iampeac.com</a>
-            </div>
-            <button class="btn-copy-channel" id="copyEmailBtn" title="Copy email address">Copy</button>
-          </div>
-
-          <!-- LinkedIn Channel -->
-          <div class="channel-card">
-            <div class="channel-icon icon-linkedin">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.2a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3Z"/>
-              </svg>
-            </div>
-            <div class="channel-body">
-              <div class="channel-label">LinkedIn Profile</div>
-              <a href="https://www.linkedin.com/in/peter-ac/" target="_blank" rel="noopener noreferrer" class="channel-link">linkedin.com/in/peter-ac</a>
-            </div>
-            <a href="https://www.linkedin.com/in/peter-ac/" target="_blank" rel="noopener noreferrer" class="btn-visit" title="Open LinkedIn Profile">Visit &rarr;</a>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Executive Footer -->
   <footer class="footer">
     <div class="container footer-layout">
@@ -410,6 +344,8 @@
       </div>
     </div>
   </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
